@@ -4,7 +4,7 @@
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -33,6 +33,10 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  /* OPTIMIZED: Promote to compositor layer for GPU-accelerated transforms */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .randomPizzaContainer {
